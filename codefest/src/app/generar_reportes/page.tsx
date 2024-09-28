@@ -14,7 +14,7 @@ export default function Home() {
             Caracterización de señales de radiofrecuencia de enlaces satelitales
           </h2>
           <span className="bg-blue-500 text-white flex items-center w-36 justify-center mx-auto h-14 text-center rounded">
-            <Link href={"calcular"}>Volver a empezar</Link>
+            <Link href={"subir_archivo"}>Volver a empezar</Link>
           </span>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CsvUploader from "../CsvUploader";
 
 export default function Home() {
   return (
@@ -13,7 +14,10 @@ export default function Home() {
           <h2 className="text-2xl mb-6 text-left text-sky-700">
             Caracterización de señales de radiofrecuencia de enlaces satelitales
           </h2>
-          <Link href={"visualizar"}>Visualizar</Link>
+          <span className="bg-blue-500 text-white flex items-center w-32 text-center justify-center mx-auto h-14 rounded">
+            <Link href={"calcular"}>Calcular</Link>
+          </span>
+          <CsvUploader />
         </div>
       </div>
     </div>
