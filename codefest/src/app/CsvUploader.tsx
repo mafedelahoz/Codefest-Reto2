@@ -99,16 +99,33 @@ const CsvUploader: React.FC = () => {
 
   return (
     <div>
-      <input type="file" accept=".csv" onChange={handleFileChange} className='mx-auto flex mb-5' />
-      <div className='flex'>
-        <button className="bg-blue-500 text-white flex items-center w-32 text-center justify-center mx-auto h-14 rounded" onClick={handleUpload}>Guardar y Subir CSV</button>
-        <button className="bg-blue-500 text-white flex items-center w-32 text-center justify-center mx-auto h-14 rounded" onClick={handleLoadFromStorage}>Cargar CSV desde Local</button>
-        <button className="bg-blue-500 text-white flex items-center w-32 text-center justify-center mx-auto h-14 rounded" onClick={handleResetStorage}>Reset CSV desde Local</button>
-      </div>
+      <input type="file" accept=".csv" onChange={handleFileChange} className="block w-80 p-2 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-200 transition duration-300 ease-in-out delay-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent mb-5 mx-auto" />
+      <h2 className='font-semibold text-8 text-center'>Opciones de carga de archivo</h2>
+      <div className="flex justify-center space-x-4">
+  <button
+    className="bg-red-500 text-white flex items-center w-32 text-center justify-center h-14 rounded transition duration-300 ease-in-out delay-200 hover:bg-red-700"
+    onClick={handleUpload}
+  >
+    Guardar y Subir CSV
+  </button>
+  <button
+    className="bg-red-500 text-white flex items-center w-32 text-center justify-center h-14 rounded transition duration-300 ease-in-out delay-200 hover:bg-red-700"
+    onClick={handleLoadFromStorage}
+  >
+    Cargar CSV desde Local
+  </button>
+  <button
+    className="bg-red-500 text-white flex items-center w-32 text-center justify-center h-14 rounded transition duration-300 ease-in-out delay-200 hover:bg-red-700"
+    onClick={handleResetStorage}
+  >
+    Reset CSV desde Local
+  </button>
+</div>
+
       {csvData && (
         <div>
-          <h3>Archivo cargado:</h3>
-          <p>{csvData.name}</p>
+          <h3 className='text-center'>Archivo cargado:</h3>
+          <p className='text-center'>{csvData.name}</p>
         </div>
       )}
     </div>

@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       <div
-        className="w-full h-[350px] bg-cover bg-center"
-        style={{ backgroundImage: "url('https://www.fac.mil.co/sites/default/files/gallery/misi%C3%B3n%20y%20visi%C3%B3n/marca%20fac.jpg')" }}
+        className="w-full h-[400px] bg-cover bg-center"
+        style={{ backgroundImage: "url('banner.png')" }}
       ></div>
       <div className="w-full bg-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
