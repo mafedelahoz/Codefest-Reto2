@@ -1,7 +1,7 @@
 "use client";
 import { useState } from 'react';
 import { openDB } from 'idb';
-import { subirArchivo } from './fetcher';
+import axios from 'axios';
 
 // Abrir la base de datos IndexedDB
 const dbPromise = openDB('csv-store', 1, {
@@ -51,12 +51,16 @@ const CsvUploader: React.FC = () => {
       // Crear un FormData para enviar el archivo
       const formData = new FormData();
       formData.append('file', file);
+      const response = await axios.post('http://localhost:8000/upload-csv', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
 
-
-      const response = await subirArchivo(formData);
-
-      if (!response.ok) {
-        throw new Error('Error al subir el archivo: ' + response.statusText);
+      if (response.status === 200) {
+        alert('¡Archivo enviado exitosamente al servidor!');
+      } else {
+        alert('Error al enviar el archivo.');
       }
 
       alert('¡Archivo guardado exitosamente en el almacenamiento local y subido al servidor!');
