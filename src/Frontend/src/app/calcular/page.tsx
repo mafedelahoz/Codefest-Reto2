@@ -32,23 +32,22 @@ export default function Home() {
       <div
         className="w-full h-[400px] bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('banner.png')",
+          backgroundImage: "url('banner.png')",
         }}
       ></div>
-      <div className="w-full bg-white py-8">
+      <div className="w-full bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold mb-4 text-left">Fuerza Aérea Colombiana</h1>
           <h2 className="text-2xl mb-6 text-left text-sky-700">
             Caracterización de señales de radiofrecuencia de enlaces satelitales
           </h2>
           <ComponenteTabla data={metricas} />
-          <span className="bg-blue-500 text-white flex items-center w-32 text-center h-16  justify-center mx-auto h-10 rounded transition duration-300 ease-in-out delay-200 hover:bg-blue-700">
+          <span className="bg-blue-500 text-white flex items-center w-32 text-center h-16 justify-center mx-auto rounded transition duration-300 ease-in-out delay-200 hover:bg-blue-700">
             <Link href={"subir_archivo"}>Comenzar de nuevo</Link>
           </span>
           <button
             onClick={handleDownloadCSV}
-            className="bg-green-500 text-white flex items-center w-32 text-center h-16 justify-center mx-auto h-10 rounded mt-4 transition duration-300 ease-in-out delay-200 hover:bg-green-700"
+            className="bg-green-500 text-white flex items-center w-32 text-center justify-center mx-auto rounded mt-4 transition duration-300 ease-in-out delay-200 hover:bg-green-700"
           >
             Descargar cálculos
           </button>
@@ -65,7 +64,6 @@ interface DataProps {
   "Ancho de Banda": string;
 }
 
-
 const ComponenteTabla: React.FC<{ data: DataProps | null }> = ({ data }) => {
   if (!data) {
     return <p>Cargando métricas...</p>;
@@ -73,7 +71,7 @@ const ComponenteTabla: React.FC<{ data: DataProps | null }> = ({ data }) => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md">
+      <div className="w-full overflow-x-auto">
         <h1 className="text-center text-2xl font-bold mb-4">Métricas</h1>
         <table className="table-auto w-full bg-white shadow-md rounded-lg border-collapse">
           <thead>

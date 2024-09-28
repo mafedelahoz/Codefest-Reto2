@@ -1,0 +1,22 @@
+Clave,Valor
+Frecuencia Central,435000000.00 Hz
+Amplitud Máxima,-51.30 dB
+Potencia Máxima,-135018.43 dB^2
+Ancho de Banda,30000000.00 Hz
+Potencia de la Señal (RMS),55015.21
+Potencia del Ruido (RMS),2196.81
+Relación Señal-Ruido (SNR),13.99 dB
+Forma de la Señal,Difusa o indefinida
+Frecuencias Espurias Detectadas,0
+Número de Frecuencias Espurias,3
+Frecuencias Armónicas Calculadas,435.00 MHz,870.00 MHz,1305.00 MHz,1740.00 MHz,2175.00 MHz
+Interferencias Detectadas,Frecuencia: 0.00 Hz, Magnitud: 55015.21
+Picos Detectados,Frecuencia: 0.00 Hz, Magnitud: 1191.03,Frecuencia: 0.00 Hz, Magnitud: 682.29,Frecuencia: 0.00 Hz, Magnitud: 574.66,Frecuencia: 0.00 Hz, Magnitud: 582.78,Frecuencia: -0.00 Hz, Magnitud: 582.78,Frecuencia: -0.00 Hz, Magnitud: 574.66,Frecuencia: -0.00 Hz, Magnitud: 682.29,Frecuencia: -0.00 Hz, Magnitud: 1191.03
+Valor Máximo de Potencia,-51.30 dB
+Valor RMS de Potencia,87.45 dB
+Crest Factor,-0.59
+PRF (Frecuencia de Repetición de Pulso),0.00 Hz
+Relación Señal a Interferencia para Canal Adyacente 1,25.98
+Relación Señal a Interferencia para Canal Adyacente 2,26.11
+Ancho de Banda Ocupado por las Señales Satelitales,30.00 MHz
+Número de Canales que Pueden Ser Acomodados,150

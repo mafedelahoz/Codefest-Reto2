@@ -91,6 +91,11 @@ const CsvUploader: React.FC = () => {
       await resetCSV();
       setCsvData(null);
       alert('¡Archivo eliminado del almacenamiento local!');
+      await axios.get('http://localhost:8000/delete-csv', {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
     } catch (error) {
       console.error(error);
       alert('Error al eliminar el archivo del almacenamiento.');
