@@ -1,6 +1,31 @@
+"use client";
+
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import { getCSV } from "../CsvUploader";
 
 export default function Home() {
+  const [csvData, setCsvData] = useState<File | null>(null);
+  useEffect(() => {
+    const loadCSV = async () => {
+      try {
+        const storedFile = await getCSV();
+        if (storedFile) {
+          setCsvData(storedFile);
+        } else {
+          alert('No se encontró ningún archivo guardado.');
+        }
+      } catch (error) {
+        console.error(error);
+        alert('Error al cargar el archivo desde el almacenamiento local.');
+      }
+    };
+
+    loadCSV();
+  }, []);
+
+  console.log(csvData);
+
   return (
     <div className="flex flex-col w-full">
       <div
