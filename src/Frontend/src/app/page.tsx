@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+/* Define la vista principal de la aplicacion */
 export default function Home() {
   return (
     <div className="flex flex-col w-full">

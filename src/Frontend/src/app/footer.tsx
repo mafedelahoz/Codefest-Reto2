@@ -1,3 +1,4 @@
+/* Componente que define el footer comun de la aplicacion */
 export default function Footer () {
     return (
       <footer style={{ backgroundColor: '#2E3740' }} className="py-6">

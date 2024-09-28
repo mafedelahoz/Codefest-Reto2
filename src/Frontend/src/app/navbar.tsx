@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-
+/* Componente que define el navbar comun de la aplicacion */
 export default function Navbar() {
   return (
     <nav className="shadow  bg-sky-700">

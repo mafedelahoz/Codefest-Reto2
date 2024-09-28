@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { obtenerMetricas } from "@/app/fetcher";
 
+/* Componente que se encarga de hacer la peticion para obtener las metricas del archivo y mostrarlas en una tabla */
 export default function Home() {
   const [metricas, setMetricas] = useState<DataProps | null>(null);
 
