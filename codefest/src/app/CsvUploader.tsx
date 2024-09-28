@@ -1,6 +1,7 @@
 "use client";
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { openDB } from 'idb';
+import { subirArchivo } from './fetcher';
 
 // Abrir la base de datos IndexedDB
 const dbPromise = openDB('csv-store', 1, {
@@ -46,7 +47,19 @@ const CsvUploader: React.FC = () => {
     try {
       // Guardar el archivo en IndexedDB
       await storeCSV(file);
-      alert('¡Archivo guardado exitosamente en el almacenamiento local!');
+
+      // Crear un FormData para enviar el archivo
+      const formData = new FormData();
+      formData.append('file', file);
+
+
+      const response = await subirArchivo(formData);
+
+      if (!response.ok) {
+        throw new Error('Error al subir el archivo: ' + response.statusText);
+      }
+
+      alert('¡Archivo guardado exitosamente en el almacenamiento local y subido al servidor!');
     } catch (error) {
       console.error(error);
       alert('Error al guardar el archivo.');
@@ -82,11 +95,12 @@ const CsvUploader: React.FC = () => {
 
   return (
     <div>
-      <input type="file" accept=".csv" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Guardar CSV en Local</button>
-      <button onClick={handleLoadFromStorage}>Cargar CSV desde Local</button>
-      <button onClick={handleResetStorage}>reset CSV desde Local</button>
-
+      <input type="file" accept=".csv" onChange={handleFileChange} className='mx-auto flex mb-5' />
+      <div className='flex'>
+        <button className="bg-blue-500 text-white flex items-center w-32 text-center justify-center mx-auto h-14 rounded" onClick={handleUpload}>Guardar y Subir CSV</button>
+        <button className="bg-blue-500 text-white flex items-center w-32 text-center justify-center mx-auto h-14 rounded" onClick={handleLoadFromStorage}>Cargar CSV desde Local</button>
+        <button className="bg-blue-500 text-white flex items-center w-32 text-center justify-center mx-auto h-14 rounded" onClick={handleResetStorage}>Reset CSV desde Local</button>
+      </div>
       {csvData && (
         <div>
           <h3>Archivo cargado:</h3>

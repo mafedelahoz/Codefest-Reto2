@@ -2,29 +2,18 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { getCSV } from "../CsvUploader";
+import { obtenerMetricas } from "@/app/fetcher"
 
 export default function Home() {
-  const [csvData, setCsvData] = useState<File | null>(null);
+  const [metricas, setMetricas] = useState([]);
   useEffect(() => {
-    const loadCSV = async () => {
-      try {
-        const storedFile = await getCSV();
-        if (storedFile) {
-          setCsvData(storedFile);
-        } else {
-          alert('No se encontró ningún archivo guardado.');
-        }
-      } catch (error) {
-        console.error(error);
-        alert('Error al cargar el archivo desde el almacenamiento local.');
-      }
-    };
+    obtenerMetricas().then((data) => {
+      setMetricas(data);
+    });
+  }
+  , []);
 
-    loadCSV();
-  }, []);
-
-  console.log(csvData);
+  console.log(metricas);
 
   return (
     <div className="flex flex-col w-full">
