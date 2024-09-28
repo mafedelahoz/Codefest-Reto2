@@ -17,6 +17,7 @@ export default function Navbar() {
                   width={32}
                   height={32}
                 />
+              <span className="text-white text-xl font-bold ml-2">Fuerza Aerea Colombiana</span>
             </Link>
           </div>
         </div>
